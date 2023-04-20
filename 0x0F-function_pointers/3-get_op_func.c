@@ -18,8 +18,8 @@ op_t ops[] = {
 		{"%", op_mod},
 		{NULL, NULL},
 };
-int d = 0;
-while (ops[d].op != NULL && *(ops[d].op) != *s)
-d++;
-return (ops[d].f);
+int f = 0;
+while (ops[f].op != NULL && *(ops[f].op) != *s)
+f++;
+return (ops[f].f);
 }
