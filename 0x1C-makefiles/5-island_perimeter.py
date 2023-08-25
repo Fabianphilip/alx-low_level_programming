@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""a function - island_perimeter"""
+"""Defines an island perimeter measuring function."""
 
 
 def island_perimeter(grid):
@@ -12,27 +12,17 @@ def island_perimeter(grid):
     Returns:
         The perimeter of the island defined in grid.
     """
-    c = len(grid)
-    m = 0
-    n = 0
-    width = 0
-    height = 0
-    prev_row = 0
-    prev_col = 0
-    while m < c:
-        j = 0
-        for i in grid[m]:
-            if i == 1:
-                if ((width == 0) and (height == 0)):
-                    width += 1
-                    height += 1
-                    prev_row = j
-                    prev_col = m
-                elif ((width > 0) and (height > 0) and (j > prev_row)):
-                    width += 1
-                elif ((width > 0) and (height > 0) and (m > prev_col)):
-                    height += 1
-                    prev_col = m
-            j += 1
-        m += 1
-    return (height + width) * 2
+    width = len(grid[0])
+    height = len(grid)
+    edges = 0
+    size = 0
+
+    for i in range(height):
+        for j in range(width):
+            if grid[i][j] == 1:
+                size += 1
+                if (j > 0 and grid[i][j - 1] == 1):
+                    edges += 1
+                if (i > 0 and grid[i - 1][j] == 1):
+                    edges += 1
+    return size * 4 - edges * 2
