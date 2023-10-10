@@ -1,6 +1,6 @@
 /*
  * File: 102-interpolation.c
- * Auth: Brennan D Baraban
+ * Auth: Fabian Philip
  */
 
 #include "search_algos.h"
